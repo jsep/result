@@ -8,12 +8,10 @@ export function attempt<T, E = unknown>(fn: () => T): Result<T, E> {
   }
 }
 
-export async function attemptAsync<T, E = unknown>(
+export function attemptAsync<T, E = unknown>(
   fn: () => Promise<T>,
 ): Promise<Result<T, E>> {
-  try {
-    return ok(await fn());
-  } catch (e) {
-    return err(e as E);
-  }
+  return fn()
+    .then((value) => ok(value))
+    .catch((error) => err(error as E));
 }

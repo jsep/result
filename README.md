@@ -1,5 +1,7 @@
 # Result
 
+![NPM Version](https://img.shields.io/npm/v/%40jsep%2Fresult?style=for-the-badge&color=%233db912)
+
 A lightweight TypeScript library for handling errors as values.
 
 ## Motivation
